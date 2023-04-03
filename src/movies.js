@@ -97,7 +97,6 @@ function bestYearAvg(moviesArray) {
     }
     moviesByYears[movieYear].push(movie.score);
   });
-  console.log(moviesByYears);
 
   let avgScores;
   let highScore = 0;
@@ -107,13 +106,10 @@ function bestYearAvg(moviesArray) {
     avgScores = moviesByYears[year].reduce(function (sum, currVal) {
       return (sum + currVal) / moviesByYears[year].length;
     });
-    console.log(avgScores);
     if (highScore < avgScores) {
       highScore = avgScores;
       highYear = year;
     }
   });
-  console.log(highYear);
   return `The best year was ${highYear} with an average score of ${highScore}`;
 }
-console.log(bestYearAvg(movies));
